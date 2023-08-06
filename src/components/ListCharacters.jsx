@@ -4,8 +4,8 @@ function ListCharacters({ data }) {
   console.log("data-->", data);
   return (
     <>
-      <section className=" container mx-auto p-4 ">
-        <div className="grid  justify-items-center  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 ">
+      <section className=" container mx-auto px-8">
+        <div className="grid justify-items-center  sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12 ">
           {data &&
             data.map(({ id, name, image, status, gender }) => (
               <Character

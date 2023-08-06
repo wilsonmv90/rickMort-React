@@ -9,6 +9,7 @@ export default function Pagination({ page, setPage, prevPage, nextPage }) {
           >
             Anterior
           </button>
+          
         }
 
         <span className="rounded-full bg-sky-700 text-white text-xl font-semibold w-50 py-2 px-6">

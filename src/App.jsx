@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
+import Modal from "./components/Modal";
 import ListCharacters from "./components/ListCharacters";
-import ModalData from "./components/ModalData";
 import Pagination from "./components/Pagination";
+
 
 function App() {
   const [data, setData] = useState(null);
   const [page, setPage] = useState(Math.floor(Math.random() * 13 + 1));
   const [prevPage, setPrevPage] = useState({});
   const [nextPage, setNextPage] = useState({});
-
 
   const getApi = async () => {
     try {
@@ -24,7 +24,6 @@ function App() {
     }
   };
 
-
   useEffect(() => {
     getApi();
   }, [page]);
@@ -33,8 +32,7 @@ function App() {
     <>
       <main className="bg-slate-900">
 
-        
-        <ModalData/>
+        <Modal />
 
         <Pagination
           page={page}
@@ -45,7 +43,7 @@ function App() {
           setNextPage={setNextPage}
         />
 
-        <ListCharacters className="flex justify-around" data={data} />
+        <ListCharacters className="flex justify-around " data={data} />
 
         <Pagination
           page={page}
